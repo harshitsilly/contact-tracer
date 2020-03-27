@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {BackgroundMode} from '@ionic-native/background-mode/ngx';
+import BackgroundMode from 'cordova-plugin-advanced-background-mode';
 import {Platform} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
@@ -16,7 +16,6 @@ export class AppComponent {
         private platform: Platform,
         private splashScreen: SplashScreen,
         private statusBar: StatusBar,
-        private backgroundMode: BackgroundMode,
         private devicesService: DevicesService,
         private bluetoothLE: BluetoothLE
     ) {
@@ -26,11 +25,11 @@ export class AppComponent {
     initializeApp() {
         this.platform.ready().then(async () => {
             this.statusBar.styleDefault();
-            this.backgroundMode.setDefaults({silent: true});
+            BackgroundMode.setDefaults({silent: true});
             if (this.platform.is('android')) {
                 await this.permission();
             }
-            this.backgroundMode.enable();
+            BackgroundMode.enable();
             this.splashScreen.hide();
         });
     }

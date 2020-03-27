@@ -3,10 +3,10 @@
   <access origin="*" />
   
   <feature name="BackgroundMode">
-    <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundMode"/>
+    <param name="android-package" value="de.hanskrywaa.BackgroundMode"/>
   </feature>
   <feature name="BackgroundModeExt">
-    <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundModeExt"/>
+    <param name="android-package" value="de.hanskrywaa.BackgroundModeExt"/>
   </feature>
 
   <feature name="BluetoothLePlugin">
